@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AHMS – Administrator Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-portal="admin">
+<section class="login-screen" id="login-screen">
+  <form class="login-form" id="loginForm">
+    <div class="login-heading"><span class="eyebrow">AHMS · RESTRICTED ACCESS</span><h2>Administrator sign in</h2><p>This portal is for authorized hospital administrators.</p></div>
+    <label class="sr-only" for="login-email">Administrator email address</label>
+    <input class="login-input" id="login-email" name="email" type="email" autocomplete="username" placeholder="email@gmail.com" required>
+    <label class="sr-only" for="login-pin">Administrator PIN</label>
+    <input class="login-input" id="login-pin" name="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="Administrator PIN" required>
+    <p class="login-error" id="login-error" role="alert" aria-live="polite"></p>
+    <button class="btn primary login-submit" id="login-submit" type="submit">SIGN IN</button>
+    <a class="login-link" href="/">Return to hospital sign in</a>
+  </form>
+  <div class="login-brand"><div class="brand-copy"><span class="brand-kicker">AHMS · ADMINISTRATION</span><h1>Hospital operations, protected.</h1><p>Administrator access to hospital oversight, account management, and system activity.</p></div><div class="login-detail"><span>01</span><b>Hospital dashboard</b><span>02</span><b>Secure account controls</b></div><div class="brand-caption"><strong>AUTHORIZED ACCESS</strong><span>ADMINISTRATORS ONLY</span></div></div>
+</section>
+<div class="app-shell" id="app-shell" hidden>
+<aside class="rail" aria-label="Main navigation">
+  <div class="brand"><span class="mark">+</span><div><b>AHMS</b><small>Administrator Portal</small></div></div>
+  <nav id="nav"></nav>
+  <div class="rail-foot">
+    <div class="account"><span class="account-avatar">+</span><span><b id="account-name"></b><small id="account-role"></small></span></div>
+    <div class="account-actions"><button class="btn logout" id="change-password" data-act="changePin" type="button">Change PIN</button><button class="btn logout" id="logout" type="button">Sign out</button></div>
+  </div>
+</aside>
+<main>
+  <header class="top"><div><h1 id="title"></h1><p id="sub"></p></div><div class="top-actions" id="actions"></div></header>
+  <section id="view"></section>
+</main>
+<dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<aside id="panel" class="panel" aria-hidden="true"></aside>
+<div id="toast" role="status"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

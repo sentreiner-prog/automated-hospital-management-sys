@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AHMS – Automated Hospital Management System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section class="login-screen" id="login-screen">
+  <form class="login-form" id="loginForm">
+    <div class="login-heading"><span class="eyebrow">AHMS · SECURE PORTAL</span><h2>Authorized Access Only</h2><p>Authenticate to launch your unified hospital workstation</p></div>
+    <label class="sr-only" for="login-email">Email address</label>
+    <input class="login-input" id="login-email" name="email" type="email" autocomplete="username" placeholder="email@gmail.com" required>
+    <label class="sr-only" for="login-pin">Staff PIN</label>
+    <input class="login-input" id="login-pin" name="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="Staff PIN" required>
+    <p class="login-error" id="login-error" role="alert" aria-live="polite"></p>
+    <button class="btn primary login-submit" id="login-submit" type="submit">SIGN IN</button>
+    <small class="login-foot">Staff accounts are created by hospital administration. Patient records are registered by authorized staff after identity verification.</small>
+  </form>
+  <div class="login-brand"><div class="brand-copy"><span class="brand-kicker">AHMS · CLINICAL OPERATIONS</span><h1>Operational Excellence, Elevated.</h1><p>A centralized platform for healthcare professionals and patient administration.</p></div><div class="login-detail"><span>01</span><b>Unified clinical records</b><span>02</span><b>Integrated Scheduling &amp; Telehealth</b></div><div class="brand-caption"><strong>YOUR CARE TEAM,</strong><span>ALL IN ONE PLACE</span></div></div>
+</section>
+<div class="app-shell" id="app-shell" hidden>
+<aside class="rail" aria-label="Main navigation">
+  <div class="brand"><span class="mark">+</span><div><b>AHMS</b><small>Hospital Management</small></div></div>
+  <nav id="nav"></nav>
+  <div class="rail-foot">
+    <div class="account"><span class="account-avatar">+</span><span><b id="account-name"></b><small id="account-role"></small></span></div>
+    <div class="account-actions"><button class="btn logout" id="change-password" data-act="changePin" type="button">Change PIN</button><button class="btn logout" id="logout" type="button">Sign out</button></div>
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <div><h1 id="title"></h1><p id="sub"></p></div>
+    <div class="top-actions" id="actions"></div>
+  </header>
+  <section id="view"></section>
+</main>
+<dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<aside id="panel" class="panel" aria-hidden="true"></aside>
+<div id="toast" role="status"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
